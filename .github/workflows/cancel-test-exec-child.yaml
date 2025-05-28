@@ -1,6 +1,7 @@
 name: Cancel test with exec child
 on:
   - workflow_dispatch
+  - workflow_call
 jobs:
   cancel-test:
     runs-on: ubuntu-latest

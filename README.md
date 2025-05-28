@@ -45,6 +45,9 @@ the github actions UI.
   test also shows that github destroys all processes under the step recursively
   before it begins any cleanup steps. It must be keeping track of all
   processes.
+
+* [`cancel-test-exec-child-call-workflow.yaml`](.github/workflows/cancel-test-exec-child.yaml):
+  Same as cancel-test-exec-child.yaml, but calls that workflow.
   
 * [`cancel-test-shell-plain.yaml`](.github/workflows/cancel-test-shell-plain.yaml):
   Represents the "normal" case of a github actions step using a bash shell that

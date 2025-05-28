@@ -1,0 +1,17 @@
+name: Cancel test with exec child via workflow matrix
+on:
+  - workflow_dispatch
+  - workflow_call
+jobs:
+  some-other-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Some other job
+        run: echo "some other job before"
+  workflow-call-test:
+    needs:
+      - some-other-job
+    strategy:
+      matrix:
+        ref: [one, two, three]
+    uses: ./.github/workflows/cancel-test-exec-child.yaml

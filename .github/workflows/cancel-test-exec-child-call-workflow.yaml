@@ -1,0 +1,14 @@
+name: Cancel test with exec child with call workflow
+on:
+  - workflow_dispatch
+  - workflow_call
+jobs:
+  another-other-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Another other job
+        run: echo "another other job before"
+  workflow-call-test:
+    needs:
+      - another-other-job
+    uses: ./.github/workflows/cancel-test-exec-child.yaml

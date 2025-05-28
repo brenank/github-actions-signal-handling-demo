@@ -1,0 +1,6 @@
+name: Cancel test with exec child with call workflow twice
+on:
+  - workflow_dispatch
+jobs:
+  workflow-call-test:
+    uses: ./.github/workflows/cancel-test-exec-child-call-workflow-matrix.yaml
